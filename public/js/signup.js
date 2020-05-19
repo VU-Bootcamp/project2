@@ -14,9 +14,10 @@ $(document).ready(function() {
       password: passwordInput.val().trim()
     };
 
-    if (!userData.email || !userData.password) {
+    if (!userData.email || !userData.username || !userData.password) {
       return;
     }
+
     // If we have an email and password, run the signUpUser function
     signUpUser(userData.email, userData.password);
     emailInput.val("");
@@ -29,6 +30,7 @@ $(document).ready(function() {
   function signUpUser(email, password) {
     $.post("/api/signup", {
       email: email,
+      username: username,
       password: password
     })
       .then(function() {
