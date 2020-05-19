@@ -33,9 +33,9 @@ body{
 }
 
 .logbutton{
-    border-radius: 15px;
+    border-radius: 10px;
     transition-duration: 0.4s;
-    font-size: 25px;
+    font-size: 20px;
     border: 1px solid #f77f00;
     background-color: white;
     padding: 3px;
