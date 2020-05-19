@@ -43,6 +43,11 @@ module.exports = function (app) {
 
   // -------------------------------------------------------------------------------------------
 
+  // loading page sends them to the index.html page
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+
   app.get("/signup", function(req, res) {
     // sending them to the signup page if they don't have an account
     if (req.user) {
