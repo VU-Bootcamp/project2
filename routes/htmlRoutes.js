@@ -37,21 +37,21 @@ module.exports = function(app) {
   app.get("/signup", function(req, res) {
     // sending them to the signup page if they don't have an account
     if (req.user) {
-      res.redirect("/welcome");
+      res.redirect("/index");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/signUp.html"));
   });
 
   app.get("/login", function(req, res) {
     // sending them to the login page if they don't have an account
     if (req.user) {
-      res.redirect("/welcome");
+      res.redirect("/index");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   // IF A USER LOGS OUT THEN TRIES TO ACCES A ROUTE THEY WILL BE REDIRECTED TO THE WELCOME PAGE (allows them to chose signup or login)
-  app.get("/welcome", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/welcome.html"));
+  app.get("/index", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 };
