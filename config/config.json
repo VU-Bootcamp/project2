@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "process.env.PW",
+    "password": "dupree7637",
     "database": "odr_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "process.env.PW",
+    "password": "dupree7637",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
