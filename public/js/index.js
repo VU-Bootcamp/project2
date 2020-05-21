@@ -97,3 +97,21 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+// -------------------------------------
+// $("#submit").on("click", function(event) {
+//   event.preventDefault();
+
+//   // var
+// })
+
+// NPS API KEY: api_key=l6Q2OPeHFuA9AeUylM7K9d8iiS4duoVCdrj0cEco
+// basic url: https://developer.nps.gov/api/v1/
+
+// HIKING PROJECT API KEY : 200766147-11bb09dc53d8135d7b379b2ee6fd4563
+
+// get trails with long/lat/distance from location drop // ** can we get a zip instead?**
+// url: https://www.hikingproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&key=
+
+// get trails by id ** can we get trails by name **
+// https://www.hikingproject.com/data/get-trails-by-id?ids=7001635,7002742,7006663,7000108,7002175&key=
