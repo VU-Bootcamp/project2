@@ -36,13 +36,13 @@ module.exports = function(app) {
 
   // loading page sends them to the index.html page
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.sendFile(path.join(__dirname, "../public/landing.html"));
   });
 
   app.get("/signup", function(req, res) {
     // sending them to the signup page if they don't have an account
     if (req.user) {
-      res.redirect("/index");
+      res.redirect("/main");
     }
     res.sendFile(path.join(__dirname, "../public/signUp.html"));
   });
@@ -50,13 +50,13 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
     // sending them to the login page if they don't have an account
     if (req.user) {
-      res.redirect("/index");
+      res.redirect("/main");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   // IF A USER LOGS OUT THEN TRIES TO ACCES A ROUTE THEY WILL BE REDIRECTED TO THE WELCOME PAGE (allows them to chose signup or login)
-  app.get("/index", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+  app.get("/main", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/main.html"));
   });
 };

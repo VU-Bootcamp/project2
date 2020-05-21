@@ -11,12 +11,13 @@
 <title>Sign-Up</title>
 </head> 
     <body>
-        <div class="sign-up-form">
+        <div >
             <h1>Sign-Up</h1>
-                <form>
-                    <input type="email" class="textbox" placeholder="Your Email">
-                    <input type="password" class="textbox" placeholder="Your Password">
-                    <input type="password" class="textbox" placeholder="Confirm Password">
+                <form class="sign-up-form">
+                    <input type="email" class="textbox" id="emailInput" placeholder="Your Email" value="">
+                    <input type="password" class="textbox" id="passwordInput" placeholder="Your Password" value="">
+                    <input type="password" class="textbox" id="confirmInput" placeholder="Confirm Password" value="">
+                    <span id="message"></span>
                     <label><input type="checkbox" class="checkbox">I agree to the terms of service</label>
                     <button type="submit" class="submitbutton">Sign Up</button>
                 </form>
