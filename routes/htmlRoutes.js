@@ -2,19 +2,10 @@ var path = require("path");
 
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // *****BOILER PLATE*******
 
   // Load index page
-<<<<<<< HEAD
-  app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
-      res.render("index", {
-        msg: "Welcome to Project 2",
-        examples: dbExamples
-      });
-    });
-=======
   //   app.get("/", function(req, res) {
   //     db.Example.findAll({}).then(function(dbExamples) {
   //       res.render("index", {
@@ -45,28 +36,27 @@ module.exports = function (app) {
 
   // loading page sends them to the index.html page
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.sendFile(path.join(__dirname, "../public/landing.html"));
   });
 
   app.get("/signup", function(req, res) {
     // sending them to the signup page if they don't have an account
     if (req.user) {
-      res.redirect("/index");
+      res.redirect("/main");
     }
     res.sendFile(path.join(__dirname, "../public/signUp.html"));
->>>>>>> 589caf5c7102cee79e66c59e7d3ceb7ed18cbf13
   });
 
-  app.get("/login", function (req, res) {
+  app.get("/login", function(req, res) {
     // sending them to the login page if they don't have an account
     if (req.user) {
-      res.redirect("/index");
+      res.redirect("/main");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   // IF A USER LOGS OUT THEN TRIES TO ACCES A ROUTE THEY WILL BE REDIRECTED TO THE WELCOME PAGE (allows them to chose signup or login)
-  app.get("/index", isAuthenticated, function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+  app.get("/main", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/main.html"));
   });
 };
