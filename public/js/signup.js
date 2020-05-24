@@ -1,12 +1,11 @@
 $(document).ready(function() {
   // Getting references to our form and input
-  var signUpForm = $(".sign-up-form");
-  var emailInput = $("#emailInput");
-  var passwordInput = $("#passwordInput");
-  var confirmPassword = $("#confirmInput");
+  var signUpForm = $("form.signup");
+  var emailInput = $("input#email-input");
+  var passwordInput = $("input#password-input");
 
   // When the signup button is clicked, we validate the email and password are not blank
-  signUpForm.on("submitbutton", function(event) {
+  signUpForm.on("submit", function(event) {
     event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
@@ -16,19 +15,6 @@ $(document).ready(function() {
     if (!userData.email || !userData.password) {
       return;
     }
-
-    $(passwordInput, confirmPassword).on("keyup", function() {
-      if ($(passwordInput).val() === $(confirmPassword).val()) {
-        $("#message")
-          .html("Passwords Match")
-          .css("color", "green");
-      } else {
-        $("#message")
-          .html("Password Doesn't Match")
-          .css("color", "red");
-      }
-    });
-
     // If we have an email and password, run the signUpUser function
     signUpUser(userData.email, userData.password);
     emailInput.val("");
@@ -42,15 +28,19 @@ $(document).ready(function() {
       email: email,
       password: password
     })
-      .then(function() {
+      .then(function(data) {
         window.location.replace("/main");
+        console.log(data);
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
   }
 
-  // function handleLoginErr(err) {
-  //   $("#alert .msg").text(err.responseJSON);
-  //   $("#alert").fadeIn(500);
-  // }
+  function handleLoginErr(err) {
+    console.log(err);
+    $("#alert .msg").text(
+      "This email is already connected to an account. Try another email, or click the login link!"
+    );
+    $("#alert").fadeIn(500);
+  }
 });
