@@ -10,6 +10,16 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/landing.html"));
   });
 
+  app.get("/about", function(req, res) {
+    // sending user to the about page
+    res.sendFile(path.join(__dirname, "../public/about.html"));
+  });
+
+  app.get("/info", function(req, res) {
+    // sending user to the info page
+    res.sendFile(path.join(__dirname, "../public/info.html"));
+  });
+
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the main page
     if (req.user) {
