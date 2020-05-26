@@ -1,10 +1,10 @@
-$(document).ready(function() {
-  // This file just does a GET request to figure out which user is logged in
-  // and updates the HTML on the page
-  $.get("/api/user_data").then(function(data) {
-    $(".member-name").text(data.email);
-  });
-});
+// $(document).ready(function() {
+//   // This file just does a GET request to figure out which user is logged in
+//   // and updates the HTML on the page
+//   $.get("/api/user_data").then(function(data) {
+//     $(".member-name").text(data.email);
+//   });
+// });
 
 // ------------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------------
@@ -20,14 +20,14 @@ $(document).ready(function() {
 // KNOXVILLE ZIP URL : https://api.openweathermap.org/data/2.5/forecast?zip=37920,us&appid=0644fdcf0afca9b1bf132e09859e56f8
 // api id = 0644fdcf0afca9b1bf132e09859e56f8
 
-function getLocation() {
+function getLocation(zip) {
   var APIKey = "0644fdcf0afca9b1bf132e09859e56f8";
 
-  var zip = $("#zip-input")
-    .val()
-    .trim();
+  // var zip = $("#zip-input")
+  //   .val()
+  //   .trim();
 
-  var queryUrl =
+  var queryURL =
     "https://api.openweathermap.org/data/2.5/forecast?zip=" +
     zip +
     ",us&appid=" +
@@ -35,14 +35,32 @@ function getLocation() {
 
   // ajax call to the OpenWeatherMap Api
   $.ajax({
-    url: queryUrl,
+    url: queryURL,
     method: "GET"
   }).then(function(response) {
-    console.log(queryUrl);
     console.log(response);
-    getCampgrounds(response.city.coord.lon, response.city.coord.lat);
+
+    var city = $("<h1>").text(response.city.name);
+    var lon = $("<h3>").text(response.city.coord.lon);
+    var lat = $("<h3>").text(response.city.coord.lat);
+
+    $("#zip-div").empty();
+
+    $("#zip-div").append(city, lon, lat);
+
+    // getCampgrounds(response.city.coord.lon, response.city.coord.lat);
   });
 }
+
+$("#select-zip").on("click", function(event) {
+  event.preventDefault();
+
+  var inputZip = $("#zip-input")
+    .val()
+    .trim();
+
+  getLocation(inputZip);
+});
 
 // function getCampgrounds(lon, lat) {
 //   console.log(lon, lat);
@@ -55,4 +73,4 @@ function getLocation() {
 //   // step4: push to empty
 // }
 
-getLocation();
+// getLocation();
