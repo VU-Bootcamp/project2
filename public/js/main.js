@@ -28,7 +28,10 @@ function getLocation() {
     .trim();
 
   var queryUrl =
-    "https://api.openweathermap.org/data/2.5/forecast?" + zip + APIKey;
+    "https://api.openweathermap.org/data/2.5/forecast?zip=" +
+    zip +
+    ",us&appid=" +
+    APIKey;
 
   // ajax call to the OpenWeatherMap Api
   $.ajax({
@@ -41,15 +44,15 @@ function getLocation() {
   });
 }
 
-function getCampgrounds(lon, lat) {
-  console.log(lon, lat);
+// function getCampgrounds(lon, lat) {
+//   console.log(lon, lat);
 
-  // active api
-  // calls long/lat from openweathermap
-  // step1: create var api, queryurl, ajax call.
-  // step2: documemation to pull response needed
-  // step3: create empty div with class/id
-  // step4: push to empty
-}
+//   // active api
+//   // calls long/lat from openweathermap
+//   // step1: create var api, queryurl, ajax call.
+//   // step2: documemation to pull response needed
+//   // step3: create empty div with class/id
+//   // step4: push to empty
+// }
 
 getLocation();
