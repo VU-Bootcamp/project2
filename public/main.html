@@ -1,58 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-<link rel="stylesheet" href="./css/main.css">
-<title>Title</title>
+  <title>Passport Authentication</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Theme -->
+   <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
+   <!-- font awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+   <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
-
-    <div id="wrapper">
-        <header id="masthead">
-            <div class="holder">
-              <img src="./img/tnlogo.png" alt="logo"></img>
-              <nav>
-                <a href="/logout">Logout</a>
-                <a href="/login">Login</a>
-                <a href="/signUp">Sign Up</a>
-                <a href="/contact">Contact</a>
-              </nav>
-            </div>
-        </header>
-
-        <br> <br> <br> <br>
-
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-default">Zip Code</span>
-            </div>
-            <input type="text" class="form-control" id="zip-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  <div id="wrapper">
+    <header id="masthead">
+        <div class="holder">
+          <img src="./img/tnlogo.png" alt="logo"></img>
+          <nav>
+            <a href="../public/landing.html">Home</a>
+            <a href="../public/login.html">Login</a>
+            <a href="../public/signUp.html">Sign Up</a>
+          </nav>
         </div>
+    </header>
+    <br> <br> <br> <br>
 
-        <button type="submit" class="btn btn-default" id="run-search">
-          <i class="fa fa-search">Search</i></button>
-            <span>
-        <button type="submit" class="btn btn-default" id="clear-results">
-          <i class="fa fa-trash">Clear Results</i></button>
-            </span>
 
-        <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-default">Location Name</span>
-        </div>
-        <input type="text" class="form-control" id="location-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/logout">
+        Logout
+      </a>
     </div>
+  </div>
+</nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Welcome <span class="member-name"></span></h2>
+      </div>
+    </div>
+  </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-<script src="./js/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Zip Code</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Location</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
 </body>
+
 </html>
