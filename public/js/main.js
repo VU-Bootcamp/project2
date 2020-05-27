@@ -1,10 +1,10 @@
-$(document).ready(function() {
-  // This file just does a GET request to figure out which user is logged in
-  // and updates the HTML on the page
-  $.get("/api/user_data").then(function(data) {
-    $(".member-name").text(data.email);
-  });
-});
+// $(document).ready(function() {
+//   // This file just does a GET request to figure out which user is logged in
+//   // and updates the HTML on the page
+//   $.get("/api/user_data").then(function(data) {
+//     $(".member-name").text(data.email);
+//   });
+// });
 
 // ------------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------------
@@ -20,36 +20,57 @@ $(document).ready(function() {
 // KNOXVILLE ZIP URL : https://api.openweathermap.org/data/2.5/forecast?zip=37920,us&appid=0644fdcf0afca9b1bf132e09859e56f8
 // api id = 0644fdcf0afca9b1bf132e09859e56f8
 
-function getLocation() {
+function getLocation(zip) {
   var APIKey = "0644fdcf0afca9b1bf132e09859e56f8";
 
-  var zip = $("#zip-input")
-    .val()
-    .trim();
+  // var zip = $("#zip-input")
+  //   .val()
+  //   .trim();
 
-  var queryUrl =
-    "https://api.openweathermap.org/data/2.5/forecast?" + zip + APIKey;
+  var queryURL =
+    "https://api.openweathermap.org/data/2.5/forecast?zip=" +
+    zip +
+    ",us&appid=" +
+    APIKey;
 
   // ajax call to the OpenWeatherMap Api
   $.ajax({
-    url: queryUrl,
+    url: queryURL,
     method: "GET"
   }).then(function(response) {
-    console.log(queryUrl);
     console.log(response);
-    getCampgrounds(response.city.coord.lon, response.city.coord.lat);
+
+    var city = $("<h1>").text(response.city.name);
+    var lon = $("<h3>").text(response.city.coord.lon);
+    var lat = $("<h3>").text(response.city.coord.lat);
+
+    $("#zip-div").empty();
+
+    $("#zip-div").append(city, lon, lat);
+
+    // getCampgrounds(response.city.coord.lon, response.city.coord.lat);
   });
 }
 
-function getCampgrounds(lon, lat) {
-  console.log(lon, lat);
+$("#select-zip").on("click", function(event) {
+  event.preventDefault();
 
-  // active api
-  // calls long/lat from openweathermap
-  // step1: create var api, queryurl, ajax call.
-  // step2: documemation to pull response needed
-  // step3: create empty div with class/id
-  // step4: push to empty
-}
+  var inputZip = $("#zip-input")
+    .val()
+    .trim();
 
-getLocation();
+  getLocation(inputZip);
+});
+
+// function getCampgrounds(lon, lat) {
+//   console.log(lon, lat);
+
+//   // active api
+//   // calls long/lat from openweathermap
+//   // step1: create var api, queryurl, ajax call.
+//   // step2: documemation to pull response needed
+//   // step3: create empty div with class/id
+//   // step4: push to empty
+// }
+
+// getLocation();

@@ -27,30 +27,35 @@
 
         <br> <br> <br> <br>
 
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-default">Zip Code</span>
-            </div>
-            <input type="text" class="form-control" id="zip-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
+    <!-- Artist Select Box -->
+  <form id="location-form">
 
-        <button type="submit" class="btn btn-default" id="run-search">
-          <i class="fa fa-search">Search</i></button>
-            <span>
-        <button type="submit" class="btn btn-default" id="clear-results">
-          <i class="fa fa-trash">Clear Results</i></button>
-            </span>
+    <!-- Label for Text Box -->
+    <label for="zip-input">Zip Code</label>
 
-        <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-default">Location Name</span>
-        </div>
-        <input type="text" class="form-control" id="location-input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
+    <!-- Text Input Box -->
+    <input type="text" id="zip-input"><br>
+
+    <!-- Submit Button -->
+    <input id="select-zip" type="submit" value="GO!">
+
+  </form>
+
+  <!-- Response Information -->
+  <div id="zip-div"></div>
+
+      <!-- empty div for camping responses -->
+        <!-- <div class="camp-sites"></div> -->
+      <!-- empty div for hiking trail response -->
+        <!-- <div class="hiking-trails"></div> -->
+      <!-- empty div for biking trail response -->
+        <!-- <div class="biking-trails"></div> -->
+      <!-- empty div for fishing responses -->
+        <!-- <div class="fishing"></div> -->
 
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="./js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
