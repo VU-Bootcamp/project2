@@ -31,6 +31,29 @@
         /* clear: both; */
         z-index: 2;
     }
+
+    #zip-input{
+      outline: none;
+      border-top-style: hidden;
+      border-right-style: hidden;
+      border-left-style: hidden;
+      border-bottom-style: hidden;
+      opacity: 0.5;
+      border-radius: 5px;
+    }
+
+    #select-zip{
+      margin-left: 75px;
+      margin-top: 10px;
+      outline: none;
+      border-top-style: hidden;
+      border-right-style: hidden;
+      border-left-style: hidden;
+      border-bottom-style: hidden;
+      opacity: 0.5;
+      border-radius: 5px;
+      padding: 3px;
+    }
     
     #logo {
         float: left;
