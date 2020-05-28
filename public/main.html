@@ -5,11 +5,9 @@
   <title>Passport Authentication</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Theme -->
-   <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
-   <!-- font awesome -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-   <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
@@ -24,10 +22,24 @@
           </nav>
         </div>
     </header>
+  </div>
     <br> <br> <br> <br>
 
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="/hiking">Hiking Trails</a>
+          <a class="dropdown-item" href="/mtn-biking">Mountain Biking</a>
+          <a class="dropdown-item" href="/trail-running">Trail Running</a>
+          <a class="dropdown-item" href="/mtn-climbing">Mountain Climbing</a>
 
- <!-- Artist Select Box -->
+        </div>
+      </div>
+
+   <!-- Artist Select Box -->
  <form id="location-form">
 
   <!-- Label for Text Box -->
@@ -46,31 +58,11 @@
 <!-- Response Information -->
 <div id="zip-div"></div>
 
-    <!-- empty div for camping responses -->
-      <!-- <div class="camp-sites"></div> -->
-    <!-- empty div for hiking trail response -->
-      <!-- <div class="hiking-trails"></div> -->
-    <!-- empty div for biking trail response -->
-      <!-- <div class="biking-trails"></div> -->
-    <!-- empty div for fishing responses -->
-      <!-- <div class="fishing"></div> -->
-
-      <div class="dropdown">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
-        </a>
-      
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Hiking Trails</a>
-          <a class="dropdown-item" href="#">Mountain Biking</a>
-          <a class="dropdown-item" href="#">Trail Running</a>
-          <a class="dropdown-item" href="#">Mountain Climbing</a>
-
-        </div>
-      </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 </body>
 
