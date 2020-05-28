@@ -97,12 +97,18 @@ function getLocation(zip) {
       method: "GET"
     }).then(function(response) {
       console.log(response);
+      var results = response.trails;
+      for (var i = 0; i < results.length; i++) {
+        var trailName = $("<h1>").text(results[i].name);
+        var image = $("<img>").attr("src", results[i].imgSmall);
+        var length = $("<h3>").text(results[i].length);
+        var stars = $("<h3>").text(results[i].stars);
+        var summary = $("<h3>").text(results[i].summary);
 
-      var trailName = $("<h1>").text(response.trails.name);
+        $("#zip-div").empty();
 
-      $("#zip-div").empty();
-
-      $("#zip-div").append(trailName);
+        $("#zip-div").append(trailName, image, length, stars, summary);
+      }
     });
   });
 }
