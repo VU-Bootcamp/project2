@@ -27,36 +27,33 @@
     <br> <br> <br> <br>
 
 
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
-    </div>
-  </div>
-</nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
-      </div>
-    </div>
-  </div>
+ <!-- Artist Select Box -->
+ <form id="location-form">
 
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-default">Zip Code</span>
-    </div>
-    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-  </div>
+  <!-- Label for Text Box -->
+  <label for="zip-input">Zip Code</label>
 
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-default">Location</span>
-    </div>
-    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-  </div>
+  <!-- Text Input Box -->
+  <input type="text" id="zip-input"><br>
+
+  <!-- Submit Button -->
+  <input id="select-zip" type="submit" value="GO!">
+
+  
+
+</form>
+
+<!-- Response Information -->
+<div id="zip-div"></div>
+
+    <!-- empty div for camping responses -->
+      <!-- <div class="camp-sites"></div> -->
+    <!-- empty div for hiking trail response -->
+      <!-- <div class="hiking-trails"></div> -->
+    <!-- empty div for biking trail response -->
+      <!-- <div class="biking-trails"></div> -->
+    <!-- empty div for fishing responses -->
+      <!-- <div class="fishing"></div> -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
