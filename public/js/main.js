@@ -1,3 +1,4 @@
+// main page js
 // $(document).ready(function() {
 //   // This file just does a GET request to figure out which user is logged in
 //   // and updates the HTML on the page
@@ -10,23 +11,64 @@
 // ------------------------------------------------------------------------------------------------------
 // api keys && functions
 
-// ACTIVE API
-// ACTIVITIES KEY: 9ktc2hwxq9r354339fgphe5c
-// CAMPGROUND KEY: 2tdamsfrdp2b72uzqxnm89ky
-// BASE ACTIVITY URL:
-// BASE CAMPING URL:
+// HIKING TRAILS DATA API
+// GET TRAILS API KEY = 200766147-11bb09dc53d8135d7b379b2ee6fd4563
+// KNOXVILLE RADIUS URL = https://www.hikingproject.com/data/get-trails?lat=35.8929&lon=-83.9387&maxDistance=30&key=200766147-11bb09dc53d8135d7b379b2ee6fd4563
+// function getHiking() {
+//   var hikingKey = "200766147-11bb09dc53d8135d7b379b2ee6fd4563";
+//   var hikingURL =
+//     "https://www.hikingproject.com/data/get-trails?lat=" +
+//     lat +
+//     "&lon=" +
+//     lon +
+//     "&maxDistance=30&key=" +
+//     hikingKey;
+// }
 
-// OPEN WEATHER MAP API to get the long and lat from the zip code input
-// KNOXVILLE ZIP URL : https://api.openweathermap.org/data/2.5/forecast?zip=37920,us&appid=0644fdcf0afca9b1bf132e09859e56f8
-// api id = 0644fdcf0afca9b1bf132e09859e56f8
+// // MOUNTAIN BIKING DATA API
+// // APIK KEY = 200766147-11bb09dc53d8135d7b379b2ee6fd4563
+// // KNOXVILLE RADIUS URL = https://www.mtbproject.com/data/get-trails?lat=35.8929&lon=-83.9387&maxDistance=30&key=200766147-11bb09dc53d8135d7b379b2ee6fd4563
+// function getBiking() {
+//   var bikingKey = "200766147-11bb09dc53d8135d7b379b2ee6fd4563";
+//   var bikingURL =
+//     "https://www.mtbproject.com/data/get-trails?lat=" +
+//     lat +
+//     "&lon=" +
+//     lon +
+//     "&maxDistance=30&key=" +
+//     bikingKey;
+// }
+
+// // MOUNTAIN CLIMBING DATA API
+// // API KEY = 200766147-f3b6f42bfba3f6ae5cad3d8a74412b79
+// // KNOXVILLE RADIUS URL = https://www.mountainproject.com/data/get-routes-for-lat-lon?lat=35.8929&lon=-83.9387&maxDistance=30&minDiff=5.6&maxDiff=5.10&key=200766147-f3b6f42bfba3f6ae5cad3d8a74412b79
+// function getClimbing() {
+//   var climbingKey = "200766147-f3b6f42bfba3f6ae5cad3d8a74412b79";
+//   var climbingURL =
+//     "https://www.mountainproject.com/data/get-routes-for-lat-lon?lat=" +
+//     lat +
+//     "&lon=" +
+//     lon +
+//     "&maxDistance=30&minDiff=5.6&maxDiff=5.10&key=" +
+//     climbingKey;
+// }
+
+// // TRAIL RUNNING DATA API
+// // API KEY = 200766147-11bb09dc53d8135d7b379b2ee6fd4563
+// // KNOXVILLE RADIUS URL = https://www.trailrunproject.com/data/get-trails?lat=35.8929&lon=-83.9387&maxDistance=30&key=200766147-11bb09dc53d8135d7b379b2ee6fd4563
+// function getRunning() {
+//   var runningKey = "200766147-11bb09dc53d8135d7b379b2ee6fd4563";
+//   var runningURL =
+//     "https://www.trailrunproject.com/data/get-trails?lat=" +
+//     lat +
+//     "&lon=" +
+//     lon +
+//     "&maxDistance=30&key=" +
+//     runningKey;
+// }
 
 function getLocation(zip) {
   var APIKey = "0644fdcf0afca9b1bf132e09859e56f8";
-
-  // var zip = $("#zip-input")
-  //   .val()
-  //   .trim();
-
   var queryURL =
     "https://api.openweathermap.org/data/2.5/forecast?zip=" +
     zip +
@@ -38,17 +80,30 @@ function getLocation(zip) {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
-    console.log(response);
+    var a = response;
+    var lon = a.city.coord.lon;
+    var lat = a.city.coord.lat;
+    var runningKey = "200766147-11bb09dc53d8135d7b379b2ee6fd4563";
+    var runningURL =
+      "https://www.trailrunproject.com/data/get-trails?lat=" +
+      lat +
+      "&lon=" +
+      lon +
+      "&maxDistance=30&key=" +
+      runningKey;
 
-    var city = $("<h1>").text(response.city.name);
-    var lon = $("<h3>").text(response.city.coord.lon);
-    var lat = $("<h3>").text(response.city.coord.lat);
+    $.ajax({
+      url: runningURL,
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
 
-    $("#zip-div").empty();
+      var trailName = $("<h1>").text(response.trails.name);
 
-    $("#zip-div").append(city, lon, lat);
+      $("#zip-div").empty();
 
-    // getCampgrounds(response.city.coord.lon, response.city.coord.lat);
+      $("#zip-div").append(trailName);
+    });
   });
 }
 
@@ -61,16 +116,3 @@ $("#select-zip").on("click", function(event) {
 
   getLocation(inputZip);
 });
-
-// function getCampgrounds(lon, lat) {
-//   console.log(lon, lat);
-
-//   // active api
-//   // calls long/lat from openweathermap
-//   // step1: create var api, queryurl, ajax call.
-//   // step2: documemation to pull response needed
-//   // step3: create empty div with class/id
-//   // step4: push to empty
-// }
-
-// getLocation();
