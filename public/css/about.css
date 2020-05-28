@@ -11,6 +11,7 @@ body {
     line-height:1.5;
     columns: #333;
     overflow-x:hidden;
+    background-image: url(../img/Simple-Wallpaper.jpg);
 }
 
 #masthead {
@@ -70,3 +71,15 @@ body {
     border-top: 8px solid #4aaaa5;
     height: 50px;
   }
+
+  .header-content {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin: 100px;
+    padding: 100px;
+    margin-bottom: 0;
+    position: absolute;
+  }
+  
+
