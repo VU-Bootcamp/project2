@@ -16,21 +16,36 @@
             <div class="holder">
               <img src="./img/tnlogo.png" alt="logo"></img>
               <nav>
-                <a href="../public/landing.html">Home</a>
-                <a href="../public/login.html">Login</a>
-                <a href="../public/signUp.html">Sign Up</a>
+                <a href="/">Home</a>
+                <a href="/login">Login</a>
+                <a href="/signup">Sign Up</a>
               </nav>
             </div>
         </header>
     </div>
     <h1>Mountain Climbing</h1>
 
-<div id="zach">
+ <!-- Artist Select Box -->
+ <form id="location-form">
 
-</div>
+  <!-- Label for Text Box -->
+  <label for="zip-input">Zip Code</label>
+
+  <!-- Text Input Box -->
+  <input type="text" id="zip-input"><br>
+
+  <!-- Submit Button -->
+  <input id="select-zip" type="submit" value="GO!">
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+</form>
+
+<!-- Response Information -->
+<div id="zip-div"></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./js/climbing.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
