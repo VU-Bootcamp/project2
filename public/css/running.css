@@ -12,6 +12,7 @@
         columns: #333;
         overflow-x:hidden;
         background-image: url("../img/Simple-Wallpaper.jpg");
+        background-repeat: no-repeat;
     }
     
     #masthead {
@@ -88,3 +89,14 @@
         position: absolute;
         top: 310px;
       }
+
+      #zip-div{
+        position: absolute;
+        top: 400px;
+        align-content: center;
+        padding: 5px 15px 5px 15x;
+        border-radius: 10%;
+        justify-content: center;
+        display: block;
+        margin: 0;
+      } 
