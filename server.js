@@ -5,7 +5,7 @@ var session = require("cookie-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 // var exphbs = require("express-handlebars");
-var mysql = require("mysql2");
+var mysql = require("mysql");
 
 var PORT = process.env.PORT || 3000;
 var db = require("./models");
