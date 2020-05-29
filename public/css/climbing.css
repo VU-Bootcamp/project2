@@ -90,7 +90,7 @@
       }
 
       #zip-div{
-        position: absolute;
+        position: flex;
         top: 275px;
         align-content: center;
         align-self: center;
