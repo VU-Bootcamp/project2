@@ -126,22 +126,15 @@ body {
     margin-bottom: 0;
     position: absolute;
     left:80px;
-    top:310px;
+    top:250px;
 }
 
-.header-content h3{
-    font-size:1.5rem;
-    display:block;
-    padding-bottom:2rem;
-    position: absolute;
-    left:80px;
-    top:400px;
-}
+
 
 .button{
     position: absolute;
     left:50px;
-    top:460px;
+    top:350px;
     color:white;
     font-size:1.2rem;
     padding: 1rem 2rem;
