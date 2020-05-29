@@ -94,3 +94,18 @@
         border-top: 8px solid #4aaaa5;
         height: 50px;
       }
+
+      .dropdown {
+        left: 50%;
+        right: auto;
+        text-align: center;
+        top: 75px;
+        transform: translate(-50%, 0);
+      }
+
+      #title {
+        text-align: center;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        top: 100px;
+      }

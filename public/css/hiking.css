@@ -71,7 +71,19 @@
         height: 50px;
       }
 
-      .title {
+      #title{
+        position: absolute;
         text-align: center;
         color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        top: 75px;
+        left: 38%;
+      }
+
+      #entry{
+        left: 40%;
+        right: auto;
+        text-align: center;
+        position: absolute;
+        top: 310px;
       }
