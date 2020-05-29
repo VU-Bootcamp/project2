@@ -90,10 +90,11 @@
       }
 
       #zip-div{
-        position: absolute;
         top: 275px;
+        position: absolute;
+        align-self:center;
         align-content: center;
-        padding: 5px 15px 5px 15x;
+        padding: 15px 15px 5px 15x;
         border-radius: 10%;
         justify-content: center;
         display: block;

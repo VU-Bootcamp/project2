@@ -93,7 +93,8 @@
         position: absolute;
         top: 275px;
         align-content: center;
-        padding: 5px 15px 5px 15x;
+        align-self: center;
+        padding: 15px 15px 5px 15x;
         border-radius: 10%;
         justify-content: center;
         display: block;

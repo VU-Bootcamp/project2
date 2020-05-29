@@ -11,7 +11,7 @@
         line-height:1.5;
         columns: #333;
         overflow-x:hidden;
-        background-color: blue
+        background-color: rgb(0, 162, 255)
     }
     
     #masthead {
@@ -90,22 +90,13 @@
         z-index: 2;
       }
 
-      .page-overlay{
-        height:100vh;
-        width: 100vw;
-        position:absolute;
-        top:0;
-        left:0;
-        background:#225470;
-        z-index: 1;
-        opacity:0.5;
-    }
-
     #zip-div{
+      align-content: center;
       position: absolute;
       top: 275px;
       align-content: center;
-      padding: 5px 15px 5px 15x;
+      align-self: center;
+      padding: 15px 15px 5px 15x;
       border-radius: 10%;
       justify-content: center;
       display: block;
