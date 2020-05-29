@@ -9,14 +9,16 @@ var passport = require("./config/passport");
 var PORT = process.env.PORT || 3000;
 var db = require("./models");
 
-// Handlebars
-// app.engine(
-//   "handlebars",
-//   exphbs({
-//     defaultLayout: "main"
-//   })
-// );
-// app.set("view engine", "handlebars");
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: "127.0.0.1",
+    user: "root",
+    password: "dupree7637",
+    database: "outdoor"
+  });
+}
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
