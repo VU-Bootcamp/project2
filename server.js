@@ -7,9 +7,7 @@ var passport = require("./config/passport");
 // var exphbs = require("express-handlebars");
 var mysql = require("mysql");
 
-var PORT = process.env.PORT || 3000;
-var db = require("./models");
-
+var connection;
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
@@ -20,6 +18,18 @@ if (process.env.JAWSDB_URL) {
     database: "outdoor"
   });
 }
+
+// Make connection.
+connection.connect(function(err) {
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
+  }
+  console.log("connected as id " + connection.threadId);
+});
+
+var PORT = process.env.PORT || 3000;
+var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
