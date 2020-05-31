@@ -6,13 +6,13 @@ var session = require("express-session");
 var passport = require("./config/passport");
 // var exphbs = require("express-handlebars");
 var mysql = require("mysql");
-
+var PORT = process.env.PORT || 3000;
 var connection;
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   connection = mysql.createConnection({
-    host: "127.0.0.1",
+    host: "localhost",
     user: "root",
     password: "dupree7637",
     database: "outdoor"
@@ -29,6 +29,7 @@ connection.connect(function(err) {
 });
 
 var PORT = process.env.PORT || 3000;
+
 var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
