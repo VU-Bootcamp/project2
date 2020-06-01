@@ -90,8 +90,8 @@
       }
 
       #zip-div{
-        position: flex;
-        top: 400px;
+        position: absolute;
+        top: 275px;
         align-content: center;
         align-self: center;
         padding: 15px 15px 5px 15x;
