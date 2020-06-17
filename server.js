@@ -1,32 +1,8 @@
-require("dotenv").config();
 // Requiring necessary npm packages
 var express = require("express");
 var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
-// var exphbs = require("express-handlebars");
-var mysql = require("mysql");
-var PORT = process.env.PORT || 3000;
-var connection;
-if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-  connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "dupree7637",
-    database: "outdoor"
-  });
-}
-
-// Make connection.
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-  console.log("connected as id " + connection.threadId);
-});
 
 var PORT = process.env.PORT || 3000;
 
@@ -37,7 +13,7 @@ var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-// We need to use sessions to keep track of our user's login status
+// We need to use sessions to keep track of our user login status
 app.use(
   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
 );
